@@ -1,24 +1,61 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 
 const services = [
-  ['LANDING SYSTEM','Сайты и лендинги, которые объясняют ценность бизнеса и собирают заявки.'],
-  ['REELS ENGINE','Монтаж короткого контента для роста внимания и продаж.'],
-  ['CONTENT SYSTEM','Визуальная система бренда и регулярное производство контента.'],
-  ['AUTOMATION','AI инструменты и автоматизация процессов бизнеса.'],
-  ['EVENT EXPERIENCE','Создание атмосферы, событий и впечатлений.']
+  ['01', 'LANDING SYSTEM', 'Лендинги и сайты, которые объясняют ценность бизнеса и превращают посетителей в клиентов.'],
+  ['02', 'REELS ENGINE', 'Производство короткого контента, который удерживает внимание и усиливает бренд.'],
+  ['03', 'CONTENT SYSTEM', 'Визуальная система, сценарии и контент для постоянного присутствия бизнеса.'],
+  ['04', 'AUTOMATION', 'AI инструменты и цифровые процессы, которые экономят время команды.'],
+  ['05', 'EVENT EXPERIENCE', 'Концепции, атмосфера и продакшн мероприятий под ключ.']
 ];
 
-export default function Home(){
- return <main className="min-h-screen bg-[#f7f4ee] text-[#171717]">
-  <section className="mx-auto max-w-6xl px-6 py-24">
-   <p className="tracking-[0.4em] text-sm">KAVA STUDIA</p>
-   <h1 className="mt-8 max-w-4xl text-6xl font-medium leading-[0.95] md:text-8xl">Создаём упаковку бизнеса, которая помогает продавать.</h1>
-   <p className="mt-8 max-w-2xl text-xl text-neutral-600">Лендинги, контент, дизайн и цифровые системы для компаний, которые хотят выглядеть сильнее конкурентов.</p>
-   <button className="mt-10 flex items-center gap-3 rounded-full bg-black px-8 py-4 text-white">Обсудить проект <ArrowRight size={18}/></button>
-  </section>
-  <section className="mx-auto grid max-w-6xl gap-6 px-6 pb-24 md:grid-cols-3">
-   {services.map(([title,text])=><article key={title} className="rounded-3xl border border-black/10 bg-white/40 p-8 backdrop-blur"><h2 className="text-2xl">{title}</h2><p className="mt-4 text-neutral-600">{text}</p></article>)}
-  </section>
-  <section className="mx-auto max-w-6xl px-6 pb-24"><div className="rounded-3xl bg-black p-10 text-white"><h2 className="text-4xl">Одна студия. Маркетинг, дизайн, контент и технологии.</h2><p className="mt-5 text-neutral-300">KAVA собирает проекты под ключ вместо пяти разных подрядчиков.</p></div></section>
- </main>
+const cases = ['СтройЭкспертПро', 'Дикобраз', 'NADO', 'KAVA AI'];
+
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-[#f7f4ee] text-[#171717]">
+      <header className="mx-auto flex max-w-6xl justify-between px-6 py-8">
+        <span className="tracking-[0.35em] text-sm">KAVA STUDIA</span>
+        <span className="text-sm text-neutral-500">Creator powered digital studio</span>
+      </header>
+
+      <section className="mx-auto max-w-6xl px-6 py-20 md:py-32">
+        <div className="max-w-5xl">
+          <p className="mb-8 flex items-center gap-2 text-sm uppercase tracking-[0.3em] text-neutral-500"><Sparkles size={16}/> Digital packaging</p>
+          <h1 className="text-5xl font-medium leading-[0.95] md:text-8xl">Создаём упаковку бизнеса, которая помогает продавать.</h1>
+          <p className="mt-8 max-w-3xl text-xl text-neutral-600 md:text-2xl">Лендинги, контент, дизайн и автоматизация для компаний, которые хотят выглядеть сильнее конкурентов.</p>
+          <button className="mt-10 flex items-center gap-3 rounded-full bg-black px-8 py-4 text-white transition hover:scale-105">Обсудить проект <ArrowRight size={18}/></button>
+        </div>
+      </section>
+
+      <section className="mx-auto grid max-w-6xl gap-5 px-6 pb-28 md:grid-cols-3">
+        {services.map(([number,title,text]) => (
+          <article key={title} className="rounded-[32px] border border-black/10 bg-white/50 p-8 backdrop-blur">
+            <span className="text-sm text-neutral-400">{number}</span>
+            <h2 className="mt-8 text-2xl">{title}</h2>
+            <p className="mt-4 text-neutral-600">{text}</p>
+          </article>
+        ))}
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 pb-28">
+        <div className="rounded-[40px] bg-black p-10 text-white md:p-16">
+          <h2 className="max-w-4xl text-4xl md:text-6xl">Один человек. Несколько ролей. Одна система.</h2>
+          <p className="mt-6 max-w-2xl text-lg text-neutral-300">Маркетинг, дизайн, контент, технологии и продакшн соединяются в одном направлении.</p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 pb-28">
+        <h2 className="text-4xl">Проекты KAVA</h2>
+        <div className="mt-8 grid gap-4 md:grid-cols-4">
+          {cases.map((item)=><div key={item} className="rounded-3xl border border-black/10 p-8 bg-white/40">{item}</div>)}
+        </div>
+      </section>
+
+      <footer className="mx-auto max-w-6xl px-6 pb-16">
+        <div className="rounded-[40px] border border-black/10 p-10">
+          <h2 className="text-4xl md:text-5xl">Есть идея? Создадим вокруг неё работающий продукт.</h2>
+        </div>
+      </footer>
+    </main>
+  );
 }
