@@ -1,12 +1,12 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'KAVA STUDIA  Лендинги, контент и цифровые продукты',
-  description: 'KAVA STUDIA создаёт лендинги, контент паки, Reels паки, дизайн и автоматизацию для бизнеса.',
-  metadataBase: new URL('https://kava-studia-kavas-projects-db7d0d92.vercel.app'),
+  title: 'KAVA STUDIA — Digital products, design & automation',
+  description: 'KAVA STUDIA — сайты, MVP, AI-системы, автоматизация, дизайн и программный контент от идеи до рабочего продукта.',
+  metadataBase: new URL('https://kava-studia.vercel.app'),
   openGraph: {
     title: 'KAVA STUDIA',
-    description: 'Создаём упаковку бизнеса, которая помогает продавать.',
+    description: 'От визуальной идеи до работающей системы.',
     type: 'website',
     locale: 'ru_RU'
   },
